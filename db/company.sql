@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS company;
+USE company;
+CREATE TABLE employees (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    salary INT NOT NULL
+);
+
+CREATE USER 'user'@'%' IDENTIFIED BY 'abc123';
+GRANT ALL PRIVILEGES ON company.* TO 'user'@'%';

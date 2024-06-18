@@ -24,13 +24,23 @@
     </script>
 </head>
 <body>
+
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+            <img src="./SoftTech.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            SoftTech Tecnologia
+        </a>
+    </nav>
+
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
+                        <h2 class="pull-left">Cadastros de Funcionarios</h2>
+                        <br>
+                        <br>
+                        <a href="create.php" class="btn btn-success"><i class="fa fa-plus"></i> Adicione um novo funcionario</a>
                     </div>
                     <?php
                     // Include config file

@@ -1,0 +1,26 @@
+services:
+  db:
+    image: mysql:8.0-debian
+    environment:  # Define as variáveis de ambiente para o container mysql
+      - TZ=America/Sao_Paulo
+      - MYSQL_ROOT_PASSWORD=abc321
+      - MYSQL_DATABASE=company
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=abc123
+    volumes:
+      - ./db/company.sql:/docker-entrypoint-initdb.d/company.sql  # Mapeia o arquivo SQL para inicializar o banco de dados
+      - mysqldata:/var/lib/mysql # Mapeia o volume "mysqldata" para armazenar os dados do MySQL.
+
+  web:
+    image: php:8.1-apache
+    environment:
+      - TZ=America/Sao_Paulo
+    volumes: # Mapeia os volumes para o container web.
+      - ./start.sh:/opt/start.sh  # Mapeia o script de inicialização.
+      - ./web:/var/www/html # Mapeia o diretório web para o diretório padrão do Apache.
+    ports:
+      - 80:80  # Mapeia a porta 80 do host para a porta 80 do container.
+    entrypoint: /bin/bash -c /opt/start.sh
+
+volumes:
+  mysqldata:

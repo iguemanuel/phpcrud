@@ -1,8 +1,8 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define('DB_SERVER', 'db.multipass');
-define('DB_USERNAME', 'phpcrud');
+define('DB_SERVER', 'db');
+define('DB_USERNAME', 'user');
 define('DB_PASSWORD', 'abc123');
 define('DB_NAME', 'company');
  
@@ -14,4 +14,3 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 ?>
-
