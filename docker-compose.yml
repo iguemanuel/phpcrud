@@ -18,6 +18,7 @@ services:
     volumes: # Mapeia os volumes para o container web.
       - ./start.sh:/opt/start.sh  # Mapeia o script de inicialização.
       - ./web:/var/www/html # Mapeia o diretório web para o diretório padrão do Apache.
+      - ./dns/softTech.conf:/etc/apache2/sites-available/softTech.conf # Mapeia o arquivo de configuração do Apache.
     ports:
       - 80:80  # Mapeia a porta 80 do host para a porta 80 do container.
     entrypoint: /bin/bash -c /opt/start.sh
